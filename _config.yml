@@ -8,8 +8,8 @@ facebook: hatondog
 twitter: hatondog
 soundcloud: radio4scotland
 
-#url: http://hatondog.com
-url: http://localhost:4000
+url: http://hatondog.com
+#url: http://localhost:4000
 
 
 defaults:
