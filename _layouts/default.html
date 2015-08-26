@@ -1,0 +1,126 @@
+{% if page.description %}
+	{% assign description = page.description %}
+{% else %}
+	{% assign description = site.description %}
+{% endif %}
+
+{% if page.title != site.name %}
+	{% capture title %}{{ page.title }} | {{ site.name }}{% endcapture %}
+{% else %}
+	{% capture title %}{{ site.name }}{% endcapture %}
+{% endif %}
+
+<html lang="en">
+	<head>
+		<title>{{ title }}</title>
+		{% if page.url == "/404.html" %}
+			<meta http-equiv="refresh" content="2; url=/">
+		{% endif %}
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{ description | strip_html  }}">
+
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="{{ site.url }}/images/{{ page.image }}" />
+		<meta property="og:description" content="{{ description | strip_html }}" />
+		
+		<link rel="shortcut icon" href="{{ site.url }}/images/logo.png">
+		<link rel="stylesheet" href="{{site.baseurl}}/css/style.css" />
+		
+		<link rel="stylesheet" href="{{site.baseurl}}/css/icons.css" />	
+		<link href="//fonts.googleapis.com/css?family=Open Sans:300,300italic,600,600italic|Roboto:700|Roboto:700&subset=latin" rel="stylesheet" type="text/css">
+		
+		{% if page.has-carousel %}
+			<!-- carousel stylesheet -->
+			<link rel="stylesheet" href="{{site.baseurl}}/css/owl-carousel/owl.carousel.css">
+			<link rel="stylesheet" href="{{site.baseurl}}/css/owl-carousel/owl.theme.css">
+		{% endif %}
+				
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-30702762-4', 'auto');
+		  ga('send', 'pageview');
+		</script>
+<head>
+
+<body>
+	<header>
+	    <div id="banner">
+		    <div class="banner_inner">
+                <div class="banner_wrap">
+        			<div class="banner_content">
+    					<a href="/" class="logo square" style="background: url({{ site.url }}/images/logo.png) no-repeat center;">
+    					</a>
+        				<div id="title">
+        					<a href="/">{{ site.name }}</a>
+        				</div>
+        				<div id="description">
+        				    {{ site.description-short }}
+        				</div>
+        				<nav>
+							<a href="/about">About</a> 
+        				    <a href="/podcasts">Podcasts</a>
+        				</nav>
+						<section class="social">
+							<span class="social">
+							{% if site.facebook %}
+								<a class="sfmsb-icon-facebook sfmsb-circle" href="https://facebook.com/{{ site.facebook }}" target="_blank" title="{{ site.name }} on Facebook">&zwnj;</a>
+							{% endif %}
+							
+							{% if site.twitter %}
+							<a class="sfmsb-icon-twitter sfmsb-circle" href="https://twitter.com/{{ site.twitter }}" target="_blank" title="{{ site.name }} on Twitter">&zwnj;</a>
+							{% endif %}
+							
+							{% if site.soundcloud %}
+							<a class="sfmsb-icon-soundcloud sfmsb-circle" href="https://soundcloud.com/{{ site.soundcloud }}" target="_blank" title="{{ site.name }} on SoundCloud">&zwnj;</a>
+							{% endif %}
+							
+							{% if site.itunes %}
+							<a class="sfmsb-icon-itunes sfmsb-circle" href="#" target="_blank" title="{{ site.name }} on iTunes">&zwnj;</a>
+							{% endif %}
+						</section>
+        			</div>
+    			</div>
+			</div>
+		</div>
+	</header>
+    <div id="content">
+	    <div id="main">
+	        <main>
+				<article>
+                    <h1>{{ page.title }}</h1>
+
+                    <div class="post_body">
+                        {{ content }}
+                    </div>
+
+                </article>
+            </main> 
+		</div>
+		<footer id="footer">
+		    <div class="footer_wrap">
+    			<span class="copyright">&copy; {{ site.name }} {{ site.time | date: '%Y' }}</span>
+			</div>
+		</footer>
+	</div>
+	<!-- scripts -->
+	{% if page.has-carousel %}
+		<!-- carousel -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="{{site.baseurl}}/css/owl-carousel/owl.carousel.min.js"></script>
+		<script>
+			$(document).ready(function() {
+			  $(".owl-carousel").owlCarousel({
+				  autoPlay: 6000, //Set AutoPlay to 3 seconds 
+				  singleItem: true
+				});
+			});
+		</script>
+	{% endif %}
+</body>
+</html>

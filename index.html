@@ -1,0 +1,30 @@
+---
+title: Hat On Dog
+has-carousel: true
+---
+
+<p>{{ site.description }}</p>
+<p>Check out <a href="podcasts" title="Oliver Podcasts">all of our podcasts</a>.</p>
+
+<hr>
+
+<h2>Featured Podcasts</h2>
+<div class="owl-carousel">
+
+{% assign podcasts = site.podcasts | sort: 'order' %}
+{% for podcast in podcasts limit:3 %}
+  <div class="item">
+	<div class="half left">
+		<a href="{{ podcast.url }}">
+			<img src="{{ site.url }}/images/{{ podcast.image }}" />
+		</a>
+	</div>
+	<div class="half right">
+		<p>
+			<a href="{{ podcast.url }}">{{ podcast.title }}</a>
+		</p>
+		<p>{{ podcast.description }}</p>
+	</div>
+  </div>
+{% endfor %}
+</div>

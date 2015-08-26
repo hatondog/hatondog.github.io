@@ -1,0 +1,45 @@
+---
+title: Podcasts
+permalink: podcasts/
+image: logo.png
+---
+
+{% assign podcasts = site.podcasts | sort: 'order' %}
+{% for podcast in podcasts %}
+	<h2>
+		<a href="{{ podcast.url }}">
+			<img class="img-show" src="{{ site.url }}/images/{{ podcast.image }}" />
+			<br />
+			{{ podcast.title }}
+		</a>
+	</h2>
+	<p>
+		<span class="social">
+		{% if podcast.facebook %}
+			<a class="sfmsb-icon-facebook sfmsb-circle" href="https://facebook.com/{{ podcast.facebook }}" target="_blank" title="{{ podcast.title }} on Facebook">&zwnj;</a>
+		{% endif %}
+		
+		{% if podcast.twitter %}
+		<a class="sfmsb-icon-twitter sfmsb-circle" href="https://twitter.com/{{ podcast.twitter }}" target="_blank" title="{{ podcast.title }} on Twitter">&zwnj;</a>
+		{% endif %}
+		
+		{% if podcast.soundcloud %}
+		<a class="sfmsb-icon-soundcloud sfmsb-circle" href="https://soundcloud.com/{{ site.soundcloud }}/sets/{{ podcast.soundcloud }}" target="_blank" title="{{ podcast.title }} on SoundCloud">&zwnj;</a>
+		{% endif %}
+		
+		{% if podcast.itunes %}
+		<a class="sfmsb-icon-itunes sfmsb-circle" href="https://itunes.apple.com/gb/podcast/{{ podcast.itunes }}" target="_blank" title="{{ podcast.title }} on iTunes">&zwnj;</a>
+		{% endif %}
+		
+		</span>
+		<br />
+		
+		{{ podcast.description }}
+		<br />
+		<a href="{{ podcast.url }}">
+			Learn more >>
+		</a>
+	</p>
+	
+	<hr>
+{% endfor %}
