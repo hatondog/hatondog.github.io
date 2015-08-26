@@ -408,11 +408,6 @@ header  .social a{
         padding: 20px;  
     } 
 }
-@media screen and (max-width: 420px){
-    .page_numbers {
-        display: none;
-    }
-}
 @media screen and (max-width: 960px){  
     #content{
         width: 100%;
@@ -441,6 +436,12 @@ header  .social a{
   display: block;
   width: 100%;
   height: auto;
+}
+@media screen and (max-width: 600px){
+    .owl-carousel .half {
+        width: 100% !important;
+		text-align: center;
+    }
 }
 .owl-carousel .half{
 	width:45%;
