@@ -208,8 +208,8 @@ header a:hover, #title a:hover{
 .logo{
     line-height: 0;
     display: block;
-    width: 96px;
-    height: 96px;
+    width: 200px;
+    height: 200px;
     margin: auto;
     background-size: cover;
     position: relative;
