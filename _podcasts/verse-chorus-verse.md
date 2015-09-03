@@ -2,7 +2,7 @@
 title: Verse Chorus Verse
 image: logo-vcv.jpg
 twitter: vcvpodcast
-facebook: pages/Verse-Chorus-Verse-podcast/423411791179470
+facebook: vcvpodcast
 order: 3
 description: <em>Verse Chorus Verse</em> is the songwriters podcast. 
 ---
