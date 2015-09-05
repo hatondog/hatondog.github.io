@@ -52,18 +52,22 @@ defaults:
       path: "podcasts/hmm-interesting-choice"
     values:
       podcast: hmm-interesting-choice
+      image: logo-hmmchoice.jpg
   -
     scope:
       path: "podcasts/podghast-spooktacular"
     values:
       podcast: podghast-spooktacular
+      image: logo-podghast.png
   -
     scope:
       path: "podcasts/dessert-island-discs"
     values:
       podcast: dessert-island-discs
+      image: logo-dessert.jpg
   -
     scope:
       path: "podcasts/verse-chorus-verse"
     values:
       podcast: verse-chorus-verse
+      image: logo-vcv.jpg
