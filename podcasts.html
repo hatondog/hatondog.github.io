@@ -4,7 +4,7 @@ permalink: podcasts/
 image: logo.png
 ---
 
-{% assign podcasts = site.podcasts | sort: order %}
+{% assign podcasts = site.podcasts | sort: "order" %}
 {% for podcast in podcasts %}
 	<h2>
 		<a href="{{ podcast.id }}">

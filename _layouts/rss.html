@@ -15,7 +15,7 @@ layout: null
     <description>{{ podcast.description | strip_html }}</description>
     <language>en-gb</language>
     <copyright>&#x2117; &amp; &#xA9; {{ site.time | date: "%Y"}}, {{site.name}} </copyright>
-    <managingEditor>{{site.email}}</managingEditor>
+    <managingEditor>{{site.email}} ({{site.name}})</managingEditor>
     <generator>{{site.name}} Technology</generator>
     <docs>{{site.url}}</docs>
     <itunes:author>{{ site.name }}</itunes:author>
@@ -36,8 +36,7 @@ layout: null
     
   {% assign episodes = site.episodes | sort: 'number' %}
   {% for ep in episodes reversed %}
-    {% assign ep-path = ep.relative_path | split: "/" %}
-     {% if ep-path[1] == podcast.id and ep.link-mp3 %}
+     {% if ep.podcast == podcast.id and ep.link-mp3 %}
     <item>
       <title>{{ep.number}} {{ep.title}}{% if ep.guest %} (Feat. {{ep.guest}}){% endif %}</title>
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
@@ -46,9 +45,9 @@ layout: null
       <itunes:image href="{{site.url}}/images/{{ podcast.image }}" />
       <pubDate>{{ep.pub-date}}</pubDate>
       <itunes:explicit>{{podcast.explicit}}</itunes:explicit>
-      <itunes:subtitle>{{ep.description}}</itunes:subtitle>
+      <itunes:subtitle>{{ep.description | truncate: 255, '...' }}</itunes:subtitle>
       <itunes:author>{{podcast.title}}</itunes:author>
-      <itunes:summary>{{ep.description}}</itunes:summary>
+      <itunes:summary>{{ep.description | truncate: 255, '...' }}</itunes:summary>
       <itunes:duration>{{ep.duration}}</itunes:duration>
       <enclosure url="{{ep.link-mp3}}" length="{{ep.byte-length}}" type="audio/mpeg" />
     </item>

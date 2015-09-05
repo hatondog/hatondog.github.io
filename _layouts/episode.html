@@ -1,12 +1,12 @@
 ---
 layout: "default" 
 ---
-{% assign ep-path = page.relative_path | split: "/" %}
 {% for p in site.podcasts %}
-  {% if p.id == ep-path[1] %}
+  {% if p.id == page.podcast %}
     {% assign podcast = p %}
   {% endif %}
 {% endfor %}
+<a href="{{podcast.url}}">{{podcast.title}}</a>
 <h2>
   Episode #{{ page.number }}
   {% if page.guest %}
@@ -31,8 +31,7 @@ layout: "default"
 <br /><br />
 <hr>
 {% for e in site.episodes %}
-  {% assign ep-path = e.relative_path | split: "/" %}
-  {% if ep-path[1] == podcast.id %}
+  {% if e.podcast == podcast.id %}
     {% assign prev-number = page.number | minus: 1 %}
     {% assign next-number = page.number | plus: 1 %}
     {% if e.number == prev-number %}

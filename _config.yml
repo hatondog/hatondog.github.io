@@ -47,3 +47,23 @@ defaults:
       type: rss
     values:
       layout: "rss"
+  -
+    scope:
+      path: "podcasts/hmm-interesting-choice"
+    values:
+      podcast: hmm-interesting-choice
+  -
+    scope:
+      path: "podcasts/podghast-spooktacular"
+    values:
+      podcast: podghast-spooktacular
+  -
+    scope:
+      path: "podcasts/dessert-island-discs"
+    values:
+      podcast: dessert-island-discs
+  -
+    scope:
+      path: "podcasts/verse-chorus-verse"
+    values:
+      podcast: verse-chorus-verse

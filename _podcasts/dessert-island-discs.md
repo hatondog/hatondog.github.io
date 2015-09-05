@@ -8,6 +8,6 @@ soundcloud-playlist: 11994053
 description: Kirsty Young returns with a new series of <em>Dessert Island Discs.</em>
 category: comedy
 explicit: Yes
-category: comedy
+category: Comedy
 explicit: "Yes"
 ---
