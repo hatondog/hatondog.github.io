@@ -1,0 +1,57 @@
+---
+layout: "default" 
+---
+{% assign ep-path = page.relative_path | split: "/" %}
+{% for p in site.podcasts %}
+  {% if p.id == ep-path[1] %}
+    {% assign podcast = p %}
+  {% endif %}
+{% endfor %}
+<h2>
+  Episode #{{ page.number }}
+  {% if page.guest %}
+    (Feat. {{page.guest}})
+  {% endif %}
+</h2>
+<span class="date">
+  <time datetime="{{page.pub-date}}" title="{{page.pub-date}}">
+    {{page.pub-date | date: '%-d %B %Y' }}
+  </time>
+</span>
+<p>{{ page.description }}</p>
+
+{% if page.soundcloud-id %}
+<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{page.soundcloud-id}}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+{% else %}
+<audio controls>
+  <source src="{{page.link-mp3}}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+{% endif %}
+<br /><br />
+<hr>
+{% for e in site.episodes %}
+  {% assign ep-path = e.relative_path | split: "/" %}
+  {% if ep-path[1] == podcast.id %}
+    {% assign prev-number = page.number | minus: 1 %}
+    {% assign next-number = page.number | plus: 1 %}
+    {% if e.number == prev-number %}
+      {% assign prev-ep = e %}
+    {% endif %}
+    {% if e.number == next-number %}
+      {% assign next-ep = e %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<div class="pagination">
+  {% if prev-ep %}
+  <a href="{{prev-ep.url}}">Prevous</a>
+  {% else %}
+  <span>Prevous</span>
+  {% endif %}
+  {% if next-ep %}
+  <a href="{{next-ep.url}}">Next</a>
+  {% else %}
+  <span>Next</span>
+  {% endif %}
+</div>

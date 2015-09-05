@@ -1,0 +1,58 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+{% for p in site.podcasts %}
+  {% if p.id == page.id %}
+    {% assign podcast = p %}
+  {% endif %}
+{% endfor %}
+  <channel>
+    <atom:link href="{{site.url}}{{page.url}}" rel="self" type="application/rss+xml"/>
+    <title>{{podcast.title}}</title>
+    <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
+    <description>{{ podcast.description | strip_html }}</description>
+    <language>en-gb</language>
+    <copyright>&#x2117; &amp; &#xA9; {{ site.time | date: "%Y"}}, {{site.name}} </copyright>
+    <managingEditor>{{site.email}}</managingEditor>
+    <generator>{{site.name}} Technology</generator>
+    <docs>{{site.url}}</docs>
+    <itunes:author>{{ site.name }}</itunes:author>
+    <itunes:category text="{{podcast.category}}"/>
+    <itunes:image href="{{site.url}}/images/{{ podcast.image }}" />
+    <itunes:explicit>{{podcast.explicit}}</itunes:explicit>
+    <itunes:owner>
+    <itunes:name>{{site.name}}</itunes:name>
+    <itunes:email>{{site.email}}</itunes:email>
+    </itunes:owner>
+    <itunes:summary>{{ podcast.description | strip_html }} {{ podcast.long-description | strip_html }}</itunes:summary>
+    <itunes:subtitle>{{podcast.description | strip_html }}</itunes:subtitle>
+    <image>
+      <url>{{site.url}}/images/{{ podcast.image }}</url>
+      <title>{{podcast.title}}</title>
+      <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
+    </image>
+    
+  {% assign episodes = site.episodes | sort: 'number' %}
+  {% for ep in episodes reversed %}
+    {% assign ep-path = ep.relative_path | split: "/" %}
+     {% if ep-path[1] == podcast.id and ep.link-mp3 %}
+    <item>
+      <title>{{ep.number}} {{ep.title}}{% if ep.guest %} (Feat. {{ep.guest}}){% endif %}</title>
+      <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
+      <description>{{ep.description}}</description>
+      <guid><![CDATA[{{site.url}}{{ep.url}}]]></guid>
+      <itunes:image href="{{site.url}}/images/{{ podcast.image }}" />
+      <pubDate>{{ep.pub-date}}</pubDate>
+      <itunes:explicit>{{podcast.explicit}}</itunes:explicit>
+      <itunes:subtitle>{{ep.description}}</itunes:subtitle>
+      <itunes:author>{{podcast.title}}</itunes:author>
+      <itunes:summary>{{ep.description}}</itunes:summary>
+      <itunes:duration>{{ep.duration}}</itunes:duration>
+      <enclosure url="{{ep.link-mp3}}" length="{{ep.byte-length}}" type="audio/mpeg" />
+    </item>
+    {% endif %}
+  {% endfor %}
+  </channel>
+</rss>

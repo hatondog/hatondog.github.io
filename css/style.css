@@ -376,7 +376,7 @@ header  .social a{
 .sfmsb-icon-vimeo:hover{ color: #00bf8f; border-color: #00bf8f}
 .sfmsb-icon-soundcloud:hover{ color: #f50; border-color: #f50}
 .sfmsb-icon-github:hover{ color: #171515; border-color: #171515}
-.sfmsb-icon-rss:hover{ color: #ff6600; border-color: #ff6600}
+.sfmsb-icon-feed:hover{ color: #ff6600; border-color: #ff6600}
 .sfmsb-icon-itunes:hover{ color: #6AAAEB; border-color: #6AAAEB}
 
 #footer{
@@ -457,4 +457,19 @@ header  .social a{
 }
 .owl-carousel .right{
 	float: right;
+}
+
+span.date{
+  font-style: italic;
+  color: #7D7D7D;
+}
+
+.pagination{
+  text-align: center;
+}
+.pagination a, .pagination span{
+  margin: 0 40px;
+}
+audio{
+  width: 100%;
 }
