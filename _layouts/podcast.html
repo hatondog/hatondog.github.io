@@ -3,11 +3,11 @@ layout: "default"
 ---
 <h1>{{ page.title }}</h1>
 {% assign podcast = page %}
-<p>
+<p class="center-on-mobile">
 	<img class="img-show" src="{{site.url}}/images/{{ podcast.image }}" />
 </p>
 
-<p>
+<p class="center-on-mobile">
 	<span class="social">
 	{% if podcast.facebook %}
 		<a class="sfmsb-icon-facebook sfmsb-circle" href="https://facebook.com/{{ podcast.facebook }}" target="_blank" title="{{ podcast.title }} on Facebook">&zwnj;</a>
