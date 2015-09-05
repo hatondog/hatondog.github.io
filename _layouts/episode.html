@@ -1,18 +1,21 @@
 ---
 layout: "default" 
 ---
+
 {% for p in site.podcasts %}
   {% if p.id == page.podcast %}
     {% assign podcast = p %}
   {% endif %}
 {% endfor %}
+
 <a href="{{podcast.url}}">{{podcast.title}}</a>
-<h2>
+<h2>{{ page.title }}</h2>
+<h3>
   Episode #{{ page.number }}
   {% if page.guest %}
     (Feat. {{page.guest}})
   {% endif %}
-</h2>
+</h3>
 <span class="date">
   <time datetime="{{page.pub-date}}" title="{{page.pub-date}}">
     {{page.pub-date | date: '%-d %B %Y' }}
@@ -29,6 +32,9 @@ layout: "default"
 </audio>
 {% endif %}
 <br /><br />
+{% if podcast.id == "hmm-interesting-choice" %}
+<p class="album-art"></p>
+{% endif %}
 <hr>
 {% for e in site.episodes %}
   {% if e.podcast == podcast.id %}
@@ -54,3 +60,24 @@ layout: "default"
   <span>Next</span>
   {% endif %}
 </div>
+
+{% if podcast.id == "hmm-interesting-choice" %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+{% assign artist-album = page.title | split, ' - ' %}
+$(function() {
+    var apiKey = "830baea2583ced9ccfee905eb1a9667c";
+    var artist = "{{artist-album[0]}}";
+    var albumName = "{{artist-album[1]}}";
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?format=json&method=album.getinfo&artist=" + escape(artist) + "&album=" + escape(albumName) + "&api_key="+apiKey, function success(data) {
+        if (data.error) {
+            console.log(data.message);
+        }
+        else {
+            var imgUrl = data.album.image[2]["#text"];
+            $(".album-art").html("<img src='" + imgUrl + "' />");
+        }
+    });
+});
+</script>
+{% endif %}

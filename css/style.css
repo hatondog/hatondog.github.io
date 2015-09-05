@@ -473,3 +473,7 @@ span.date{
 audio{
   width: 100%;
 }
+
+.album-art{
+  text-align: center;
+}
