@@ -11,6 +11,9 @@ soundcloud: radio4scotland
 url: http://hatondog.com
 #url: http://localhost:4000
 
+gems:
+  - jekyll-sitemap
+  
 collections:
   podcasts:
     output: true
