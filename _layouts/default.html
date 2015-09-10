@@ -4,10 +4,18 @@
 	{% assign description = site.description %}
 {% endif %}
 
+{% capture title %}{{ page.title }}{% endcapture %}
+
+{% if page.podcast %}
+  {% for p in site.podcasts %}
+    {% if p.id == page.podcast %}
+      {% capture title %}{{ title }} | {{p.title}}{% endcapture %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {% if page.title != site.name %}
-	{% capture title %}{{ page.title }} | {{ site.name }}{% endcapture %}
-{% else %}
-	{% capture title %}{{ site.name }}{% endcapture %}
+	{% capture title %}{{ title }} | {{ site.name }}{% endcapture %}
 {% endif %}
 
 <html lang="en">
