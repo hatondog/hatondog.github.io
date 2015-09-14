@@ -53,8 +53,7 @@ layout: "default"
 <ul>
   {% assign episodes = site.episodes | sort: 'number' %}
   {% for ep in episodes reversed %}
-    {% assign ep-path = ep.relative_path | split: "/" %}
-     {% if ep-path[1] == podcast.id %}
+     {% if ep.podcast == podcast.id %}
      <li>
      <a href="{{ep.url}}">
       {{ep.number}} {{ep.title}}

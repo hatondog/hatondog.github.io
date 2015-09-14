@@ -15,17 +15,50 @@ has-carousel: true
 {% assign podcasts = site.podcasts | sort: 'order' %}
 {% for podcast in podcasts limit:3 %}
   <div class="item">
-	<div class="half left">
-		<a href="podcasts/{{ podcast.id }}">
-			<img src="{{ site.url }}/images/{{ podcast.image }}" />
-		</a>
-	</div>
-	<div class="half right">
-		<p>
-			<a href="podcasts/{{ podcast.id }}">{{ podcast.title }}</a>
-		</p>
-		<p>{{ podcast.description }}</p>
-	</div>
+    <div class="half left">
+      <a href="{{ podcast.url }}" title="{{podcast.title}}">
+        <img src="{{ site.url }}/images/{{ podcast.image }}" />
+      </a>
+    </div>
+    <div class="half right">
+      <p>
+        <a href="{{ podcast.url }}" title="{{podcast.title}}">{{ podcast.title }}</a>
+      </p>
+      <p>{{ podcast.description }}</p>
+    </div>   
   </div>
 {% endfor %}
 </div>
+
+
+{% assign podcasts = site.podcasts | sort: 'order' %}
+{% for podcast in podcasts limit:1 %}
+{% assign episodes = site.episodes | sort: 'number' %}
+{% for ep in episodes reversed %}
+   {% if ep.podcast == podcast.id %}
+   <br /><br />
+    <h2>Featured episode</h2>
+    <h3><a href="{{podcast.url}}">{{podcast.title}}</a></h3>
+    <a href="{{ep.url}}">
+      {{ep.number}} {{ep.title}}
+      {% if ep.guest %}
+        (Feat. {{ep.guest}})
+      {% endif %}
+     </a> 
+     <span class="date">
+        <time datetime="{{ep.pub-date}}" title="{{ep.pub-date}}">
+          {{ep.pub-date | date: '%-d %B %Y' }}
+        </time>
+      </span>
+      {% if ep.soundcloud-id %}
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/{{ep.soundcloud-id}}&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&show_artwork=true"></iframe>
+        {% else %}
+        <audio controls>
+          <source src="{{page.link-mp3}}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+       {% endif %}
+   {% break %}
+   {% endif %}
+ {% endfor %}
+{% endfor %}
