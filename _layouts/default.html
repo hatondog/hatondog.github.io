@@ -16,6 +16,8 @@
 
 {% if page.title != site.name %}
 	{% capture title %}{{ title }} | {{ site.name }}{% endcapture %}
+{% else %}
+  {% capture title %}{{ site.name }} | {{ site.description-short }}{% endcapture %}
 {% endif %}
 
 <html lang="en">

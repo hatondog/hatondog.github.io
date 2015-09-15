@@ -11,7 +11,6 @@ has-carousel: true
 
 <h2>Featured Podcasts</h2>
 <div class="owl-carousel">
-
 {% assign podcasts = site.podcasts | sort: 'order' %}
 {% for podcast in podcasts limit:3 %}
   <div class="item">
@@ -30,13 +29,14 @@ has-carousel: true
 {% endfor %}
 </div>
 
-
 {% assign podcasts = site.podcasts | sort: 'order' %}
 {% for podcast in podcasts limit:1 %}
 {% assign episodes = site.episodes | sort: 'number' %}
 {% for ep in episodes reversed %}
    {% if ep.podcast == podcast.id %}
-   <br /><br />
+   <br />
+    <hr>
+    <br />
     <h2>Featured episode</h2>
     <h3><a href="{{podcast.url}}">{{podcast.title}}</a></h3>
     <a href="{{ep.url}}">
