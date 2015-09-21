@@ -37,18 +37,22 @@ layout: "default"
 <p class="album-art center-on-mobile"></p>
 {% endif %}
 <hr>
-{% for e in site.episodes %}
-  {% if e.podcast == podcast.id %}
-    {% assign prev-number = page.number | minus: 1 %}
-    {% assign next-number = page.number | plus: 1 %}
-    {% if e.number == prev-number %}
-      {% assign prev-ep = e %}
+
+  {% assign episodes = site.episodes | sort: 'number' %}
+  {% for ep in episodes %}
+    {% if ep.podcast == podcast.id %}
+      {% if ep-found %}
+        {% assign next-ep = ep %}
+        {% break %}
+      {% endif %}
+      {% if ep.number == page.number %}
+        {% assign ep-found = true %}
+        {% assign prev-ep = prev-temp %}
+      {% endif %}
+        {% assign prev-temp = ep %}
     {% endif %}
-    {% if e.number == next-number %}
-      {% assign next-ep = e %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+   
 <div class="pagination">
   {% if prev-ep %}
   <a href="{{prev-ep.url}}">Prevous</a>
