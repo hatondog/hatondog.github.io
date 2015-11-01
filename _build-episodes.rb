@@ -1,10 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'json'
 require 'cgi'
-
-#Soundcloud API key
-apiClientId = '34d6b7ae113a70add0d6eb096e7061f7'
 
 #Soundcloud RSS URL
 feed = "http://feeds.soundcloud.com/users/soundcloud:users:48054353/sounds.rss"
@@ -18,6 +14,7 @@ if !items.empty?
   items.each do |item|
     #get rss fields
     itemTitle=item.at("title").text
+    itemDescription=item.at("description").text
     pubDate=item.at("pubdate").text
     duration = item.at("duration").text
     url = item.at("enclosure")["url"]
@@ -40,16 +37,13 @@ if !items.empty?
       title = title.split(" (Feat.").first
     end
     
+    #track description
+    description = itemDescription.split("***").first.strip
+    
     #soundcloud id
     guid = item.at("guid").text
     soundcloudId = guid.split('/')[-1]
     
-    #Soundcloud API calls
-    #track description
-    trackApiUrl = 'http://api.soundcloud.com/tracks/' + soundcloudId + '?client_id=' + apiClientId
-    jsonTrack = JSON.load(open(trackApiUrl))
-    trackDescription = jsonTrack["description"]
-    description = trackDescription.split("***").first.strip
     
     #Directory/file path
     if itemTitle.include? "Hmm Interesting Choice"
@@ -58,6 +52,8 @@ if !items.empty?
       podcast = 'dessert-island-discs'
     elsif itemTitle.include? "Podghast Spooktacular"
       podcast = 'podghast-spooktacular'
+    elsif itemTitle.include? "Verse Chorus Verse"
+      podcast = 'verse-chorus-verse'
     end
     relativeFilePath = '../_episodes/'+ podcast + '/' + number+'.md'
     filePath = File.expand_path(relativeFilePath, __FILE__)
