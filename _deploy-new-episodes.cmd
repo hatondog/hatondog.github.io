@@ -2,7 +2,7 @@
 ruby _build-episodes.rb
 
 :: Add only new episodes
-git add $(git ls-files _episodes -o --exclude-standard)
+(echo a&echo *&echo q)|git add _episodes -i
 
 :: Commit new episodes
 git commit -m ":computer: Auto-adding new episode"
