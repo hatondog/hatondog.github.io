@@ -2,7 +2,7 @@
 title: The Podghast Spooktacular!
 id: podghast-spooktacular
 image: logo-podghast.png
-order: 2
+order: 3
 facebook: podghast
 twitter: podghast
 soundcloud: the-podghast-spooktacular
