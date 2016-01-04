@@ -20,7 +20,11 @@ layout: null
     <docs>{{site.url}}</docs>
     <itunes:author>{{ site.name }}</itunes:author>
     <itunes:category text="{{podcast.category}}"/>
-    <itunes:image href="{{site.url}}/images/{{ podcast.image }}" />
+    {% if podcast.image-itunes %}
+      <itunes:image href="{{site.url}}/images/{{ podcast.image-itunes }}" />
+    {% else %}
+      <itunes:image href="{{site.url}}/images/{{ podcast.image }}" />
+    {% endif %}
     <itunes:explicit>{{podcast.explicit}}</itunes:explicit>
     <itunes:owner>
     <itunes:name>{{site.name}}</itunes:name>
@@ -29,11 +33,14 @@ layout: null
     <itunes:summary>{{ podcast.description | strip_html }} {{ podcast.long-description | strip_html }}</itunes:summary>
     <itunes:subtitle>{{podcast.description | strip_html }}</itunes:subtitle>
     <image>
-      <url>{{site.url}}/images/{{ podcast.image }}</url>
+      {% if podcast.image-itunes %}
+        <url>{{site.url}}/images/{{ podcast.image-itunes }}</url>
+      {% else %}
+        <url>{{site.url}}/images/{{ podcast.image }}</url>
+      {% endif %}
       <title>{{podcast.title}}</title>
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
     </image>
-    
   {% assign episodes = site.episodes | sort: 'number' %}
   {% for ep in episodes reversed %}
      {% if ep.podcast == podcast.id and ep.link-mp3 %}
@@ -42,7 +49,11 @@ layout: null
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
       <description>{{ep.description}}</description>
       <guid><![CDATA[{{site.url}}{{ep.url}}]]></guid>
-      <itunes:image href="{{site.url}}/images/{{ podcast.image }}" />
+      {% if podcast.image-itunes %}
+        <itunes:image href="{{site.url}}/images/{{ podcast.image-itunes }}" />
+        {% else %}
+         <url>{{site.url}}/images/{{ podcast.image }}</url>
+      {% endif %}
       <pubDate>{{ep.pub-date}}</pubDate>
       <itunes:explicit>{{podcast.explicit}}</itunes:explicit>
       <itunes:subtitle>{{ep.description | truncate: 255, '...' }}</itunes:subtitle>

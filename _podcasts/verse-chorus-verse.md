@@ -2,6 +2,7 @@
 title: Verse Chorus Verse
 id: verse-chorus-verse
 image: logo-vcv.jpg
+image-itunes: logo-vcv-itunes.png
 order: 2
 facebook: vcvpodcast
 twitter: vcvpodcast
