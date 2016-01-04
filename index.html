@@ -29,8 +29,8 @@ has-carousel: true
 {% endfor %}
 </div>
 
-{% assign podcasts = site.podcasts | sort: 'order' %}
-{% for podcast in podcasts limit:1 %}
+{% assign podcast = site.podcasts[3] %}
+
 {% assign episodes = site.episodes | sort: 'number' %}
 {% for ep in episodes reversed %}
    {% if ep.podcast == podcast.id %}
@@ -61,4 +61,3 @@ has-carousel: true
    {% break %}
    {% endif %}
  {% endfor %}
-{% endfor %}
