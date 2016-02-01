@@ -2,6 +2,7 @@
 title: Hmm, Interesting Choice...
 id: hmm-interesting-choice
 image: logo-hmmchoice.jpg
+image-itunes: logo-hmmchoice-itunes.png
 order: 1
 facebook: hmmchoice
 twitter: hmmchoice
