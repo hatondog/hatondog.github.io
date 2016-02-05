@@ -57,13 +57,19 @@ if !items.empty?
     end
     relativeFilePath = '../_episodes/'+ podcast + '/' + number+'.md'
     filePath = File.expand_path(relativeFilePath, __FILE__)
+    title = CGI.escapeHTML(title)
+    slug = title.downcase.strip.gsub('- ', '').gsub(' ', '-').gsub(/[^\w-]/, '')
+     if(!guest.nil?)
+      slug = slug + '-' + guest.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    end
     
     puts "Saving: "+relativeFilePath
     
     #Save file
     out_file = File.new(filePath, "w")
     out_file.puts("---\n")
-    out_file.puts("title: #{CGI.escapeHTML(title)}\n")
+    out_file.puts("title: #{title}\n")
+    out_file.puts("slug: #{slug}\n")
     if(!guest.nil?)
       out_file.puts("guest: #{guest}\n")
     end
