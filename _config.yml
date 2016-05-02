@@ -52,25 +52,25 @@ defaults:
       layout: "rss"
   -
     scope:
-      path: "podcasts/hmm-interesting-choice"
+      path: "_episodes/hmm-interesting-choice"
     values:
       podcast: hmm-interesting-choice
       image: logo-hmmchoice.jpg
   -
     scope:
-      path: "podcasts/podghast-spooktacular"
+      path: "_episodes/podghast-spooktacular"
     values:
       podcast: podghast-spooktacular
       image: logo-podghast.png
   -
     scope:
-      path: "podcasts/dessert-island-discs"
+      path: "_episodes/dessert-island-discs"
     values:
       podcast: dessert-island-discs
       image: logo-dessert.jpg
   -
     scope:
-      path: "podcasts/verse-chorus-verse"
+      path: "_episodes/verse-chorus-verse"
     values:
       podcast: verse-chorus-verse
       image: logo-vcv.jpg
