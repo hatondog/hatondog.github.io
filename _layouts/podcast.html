@@ -50,9 +50,9 @@ layout: "default"
 <hr>
 <h3 title="Oliver Episodes">All of our episodes</h3>
 <ul>
-  {% assign episodes = site.episodes | sort: 'number' %}
-  {% for ep in episodes reversed %}
-     {% if ep.podcast == podcast.id %}
+  {% assign episodes = site.collections[0].docs | sort: 'number' %}
+{% for ep in episodes reversed %}
+     {% if podcast.id contains ep.podcast %}
       {% assign has-episodes = true %}
      <li>
      <a href="{{ep.url}}">
@@ -66,8 +66,9 @@ layout: "default"
       </span>
      </li>
      {% endif %}
-   {% endfor %}
+{% endfor%}
 </ul>
+
 {% if has-episodes == null %}
   <p><em>Coming soon...</em></p>
 {% endif %}

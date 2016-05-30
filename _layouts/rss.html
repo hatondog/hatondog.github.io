@@ -41,9 +41,9 @@ layout: null
       <title>{{podcast.title}}</title>
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
     </image>
-  {% assign episodes = site.episodes | sort: 'number' %}
+  {% assign episodes = site.collections[0].docs | sort: 'number' %}
   {% for ep in episodes reversed %}
-     {% if ep.podcast == podcast.id and ep.link-mp3 %}
+     {% if podcast.id contains ep.podcast and ep.link-mp3 %}
     <item>
       <title>{{ep.number}} {{ep.title}}{% if ep.guest %} (Feat. {{ep.guest}}){% endif %}</title>
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
