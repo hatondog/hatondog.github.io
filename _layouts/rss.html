@@ -9,6 +9,7 @@ layout: null
   {% endif %}
 {% endfor %}
   <channel>
+    
     <atom:link href="{{site.url}}{{page.url}}" rel="self" type="application/rss+xml"/>
     <title>{{podcast.title}}</title>
     <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
@@ -42,8 +43,9 @@ layout: null
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
     </image>
   {% assign episodes = site.collections[0].docs | sort: 'number' %}
+  
   {% for ep in episodes reversed %}
-     {% if podcast.id contains ep.podcast and ep.link-mp3 %}
+     {% if page.id contains ep.podcast and ep.link-mp3 %}
     <item>
       <title>{{ep.number}} {{ep.title}}{% if ep.guest %} (Feat. {{ep.guest}}){% endif %}</title>
       <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
