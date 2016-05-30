@@ -54,23 +54,23 @@ defaults:
     scope:
       path: "_episodes/hmm-interesting-choice"
     values:
-      podcast: hmm-interesting-choice
-      image: logo-hmmchoice.jpg
+      podcast: "hmm-interesting-choice"
+      image: "logo-hmmchoice.jpg"
   -
     scope:
       path: "_episodes/podghast-spooktacular"
     values:
-      podcast: podghast-spooktacular
-      image: logo-podghast.png
+      podcast: "podghast-spooktacular"
+      image: "logo-podghast.png"
   -
     scope:
       path: "_episodes/dessert-island-discs"
     values:
-      podcast: dessert-island-discs
-      image: logo-dessert.jpg
+      podcast: "dessert-island-discs"
+      image: "logo-dessert.jpg"
   -
     scope:
       path: "_episodes/verse-chorus-verse"
     values:
-      podcast: verse-chorus-verse
-      image: logo-vcv.jpg
+      podcast: "verse-chorus-verse"
+      image: "logo-vcv.jpg"
