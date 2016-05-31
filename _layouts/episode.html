@@ -3,7 +3,7 @@ layout: "default"
 ---
 
 {% for p in site.podcasts %}
-  {% if page.podcast contains p.id %}
+  {% if p.id contains page.podcast %}
     {% assign podcast = p %}
   {% endif %}
 {% endfor %}
