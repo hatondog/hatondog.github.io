@@ -38,9 +38,9 @@ layout: "default"
 {% endif %}
 <hr>
 
-  {% assign episodes = site.episodes | sort: 'number' %}
+  {% assign episodes = site.collections[0].docs | sort: 'number' %}
   {% for ep in episodes %}
-    {% if ep.podcast == podcast.id %}
+    {% if podcast.id contains ep.podcast %}
       {% if ep-found %}
         {% assign next-ep = ep %}
         {% break %}
