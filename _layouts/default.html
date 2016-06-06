@@ -8,7 +8,7 @@
 
 {% if page.podcast %}
   {% for p in site.podcasts %}
-    {% if p.id == page.podcast %}
+    {% if p.id contains page.podcast %}
       {% capture title %}{{ title }} | {{p.title}}{% endcapture %}
     {% endif %}
   {% endfor %}
