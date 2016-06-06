@@ -31,9 +31,9 @@ has-carousel: true
 
 {% assign podcast = site.podcasts[3] %}
 
-{% assign episodes = site.episodes | sort: 'number' %}
+{% assign episodes = site.collections[0].docs | sort: 'number' %}
 {% for ep in episodes reversed %}
-   {% if ep.podcast == podcast.id %}
+   {% if podcast.id contains ep.podcast %}
    <br />
     <hr>
     <br />
