@@ -74,3 +74,9 @@ defaults:
     values:
       podcast: "verse-chorus-verse"
       image: "logo-vcv.jpg"
+  -
+    scope:
+      path: "_episodes/kuwkuwtk"
+    values:
+      podcast: "kuwkuwtk"
+      image: "logo-kuwkuwtk.jpg"
