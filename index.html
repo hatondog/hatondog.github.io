@@ -29,7 +29,6 @@ has-carousel: true
 {% endfor %}
 </div>
 
-{% assign podcast = site.podcasts[3] %}
 
 {% assign episodes = site.collections[0].docs | sort: 'number' %}
 {% for ep in episodes reversed %}
