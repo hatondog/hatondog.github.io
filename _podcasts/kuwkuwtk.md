@@ -2,7 +2,7 @@
 title: Keeping Up With Keeping Up With The Kardashians
 id: kuwkuwtk
 image: logo-kuwkuwtk.jpg
-image-itunes: logo-kuwkuwtk.jpg
+image-itunes: logo-kuwkuwtk-itunes.png
 order: 3
 facebook: kuwkuwtk
 twitter: tweetingupwith
