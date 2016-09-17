@@ -12,7 +12,7 @@ layout: null
     
     <atom:link href="{{site.url}}{{page.url}}" rel="self" type="application/rss+xml"/>
     <title>{{podcast.title}}</title>
-    <link><![CDATA[{{site.url}}/podcasts/{{podcast.id}}]]></link>
+    <link><![CDATA[{{site.url}}{{podcast.id}}]]></link>
     <description>{{ podcast.description | strip_html }}</description>
     <language>en-gb</language>
     <copyright>&#x2117; &amp; &#xA9; {{ site.time | date: "%Y"}}, {{site.name}} </copyright>
