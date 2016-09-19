@@ -8,7 +8,7 @@ facebook: kuwkuwtk
 twitter: tweetingupwith
 soundcloud: kuwkuwtk
 soundcloud-playlist: 259952751
-itunes: 
+itunes: keeping-up-keeping-up-kardashians/id1155795112
 description: <em>Keeping Up With Keeping Up With The Kardashians</em>  is a podcast by Hannah Rachel Cruickshank and Jeffrey Khan, two comedians, one obsessed, one oblivious.
 long-description: 
 category: Comedy
