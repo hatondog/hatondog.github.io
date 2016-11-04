@@ -60,6 +60,7 @@ if !items.empty?
     relativeFilePath = '../_episodes/'+ podcast + '/' + number+'.md'
     filePath = File.expand_path(relativeFilePath, __FILE__)
     title = CGI.escapeHTML(title)
+    slug = title.downcase.strip.gsub('- ', '').gsub(' ', '-').gsub(/[^\w-]/, '')
      if(!guest.nil?)
       slug = slug + '-' + guest.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     end
