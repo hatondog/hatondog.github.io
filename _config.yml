@@ -80,3 +80,9 @@ defaults:
     values:
       podcast: "kuwkuwtk"
       image: "logo-kuwkuwtk.jpg"
+  -
+    scope:
+      path: "_episodes/dash-kapital"
+    values:
+      podcast: "dash-kapital"
+      image: "logo-dashkapital.png"

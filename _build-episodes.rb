@@ -56,6 +56,8 @@ if !items.empty?
       podcast = 'verse-chorus-verse'
     elsif itemTitle.include? "Keeping Up With Keeping Up With The Kardashians"
       podcast = 'kuwkuwtk'
+    elsif itemTitle.include? "Dash Kapital"
+      podcast = 'dash-kapital'
     end
     relativeFilePath = '../_episodes/'+ podcast + '/' + number+'.md'
     filePath = File.expand_path(relativeFilePath, __FILE__)

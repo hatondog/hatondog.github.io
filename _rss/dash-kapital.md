@@ -1,0 +1,3 @@
+---
+id: dash-kapital
+---
