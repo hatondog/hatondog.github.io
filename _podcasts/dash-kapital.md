@@ -8,7 +8,7 @@ facebook: dashkapitalpod
 twitter: dashkapitalpod
 soundcloud: dash-kapital
 soundcloud-playlist: 303152747
-itunes: 
+itunes: dash-kapital/id1209862606
 description: Join Dr Gemma Flynn and her guests on their mission to help academia better keep up with pop culture behemoths the Kardashians.
 long-description: 
 category: Comedy
