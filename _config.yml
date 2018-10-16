@@ -86,3 +86,9 @@ defaults:
     values:
       podcast: "dash-kapital"
       image: "logo-dashkapital.png"
+  -
+    scope:
+      path: "_episodes/can-i-just-say-apprentice"
+    values:
+      podcast: "can-i-just-say-apprentice"
+      image: "logo-apprentice.png"
