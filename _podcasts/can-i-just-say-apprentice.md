@@ -3,7 +3,7 @@ title: Can I Just Say? A podcast about The Apprentice
 id: can-i-just-say-apprentice.md
 image: logo-apprentice.png
 image-itunes: logo-apprentice-itunes.png
-order: 5
+order: 4
 facebook: 
 twitter: 
 soundcloud: 

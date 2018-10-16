@@ -3,7 +3,7 @@ title: Dash Kapital
 id: dash-kapital
 image: logo-dashkapital.png
 image-itunes: logo-dashkapital-itunes.png
-order: 4
+order: 5
 facebook: dashkapitalpod
 twitter: dashkapitalpod
 soundcloud: dash-kapital
