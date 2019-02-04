@@ -92,3 +92,10 @@ defaults:
     values:
       podcast: "can-i-just-say-apprentice"
       image: "logo-can-you-just-say.png"
+  -
+    scope:
+      path: "_episodes/whose-wine-is-it-anyway"
+    values:
+      podcast: "whose-wine-is-it-anyway"
+      image: "logo-whose-wine-is-it-anyway.png"
+

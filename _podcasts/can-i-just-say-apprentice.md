@@ -3,7 +3,7 @@ title: Can You Just Say
 id: can-i-just-say-apprentice.md
 image: logo-can-you-just-say.png
 image-itunes: logo-can-you-just-say-itunes.png
-order: 4
+order: 5
 facebook: 
 twitter: 
 soundcloud: can-i-just-say
