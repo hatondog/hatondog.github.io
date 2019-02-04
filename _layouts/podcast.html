@@ -56,14 +56,20 @@ layout: "default"
       {% assign has-episodes = true %}
      <li>
      <a href="{{ep.url}}">
-      {{ep.number}} {{ep.title}}
-      {% if ep.guest %}
-        (Feat. {{ep.guest}})
-      {% endif %}
+      {{ep.number}}. {{ep.title}}
      </a> 
      <span class="date">
       <time datetime="{{ep.pub-date}}" title="{{ep.pub-date}}">{{ep.pub-date | date: '%-d %B %Y' }}</time>
       </span>
+      {% if ep.guest %}
+      <ul style="margin-bottom: 0">
+      <li>
+     <a href="{{ep.url}}">
+        <strong>(Feat. {{ep.guest}})</strong>
+     </a> 
+     </li>
+     </ul>
+      {% endif %}
      </li>
      {% endif %}
 {% endfor%}
