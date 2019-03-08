@@ -1,8 +1,8 @@
 ---
 title: Can I Just Say
 id: can-i-just-say-apprentice.md
-image: logo-can-you-just-say.png
-image-itunes: logo-can-you-just-say-itunes.png
+image: logo-apprentice2.png
+image-itunes: logo-apprentice2-itunes.png
 order: 5
 facebook: 
 twitter: 
