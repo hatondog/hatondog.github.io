@@ -1,5 +1,5 @@
 ---
-title: Can You Just Say
+title: Can I Just Say
 id: can-i-just-say-apprentice.md
 image: logo-can-you-just-say.png
 image-itunes: logo-can-you-just-say-itunes.png
