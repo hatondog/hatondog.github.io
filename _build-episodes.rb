@@ -62,6 +62,8 @@ if !items.empty?
       podcast = 'can-i-just-say-apprentice'
     elsif itemTitle.include? "Can You Just Say"
       podcast = 'can-i-just-say-apprentice'
+    elsif itemTitle.include? "Whose Wine Is It Anyway"
+      podcast = 'whose-wine-is-it-anyway'
     end
     relativeFilePath = '../_episodes/'+ podcast + '/' + number+'.md'
     filePath = File.expand_path(relativeFilePath, __FILE__)
