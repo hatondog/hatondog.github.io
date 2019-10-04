@@ -9,7 +9,7 @@ twitter:
 soundcloud: can-i-just-say
 soundcloud-playlist: 624300198
 itunes: can-i-just-say-a-podcast-about-the-apprentice/id1439225916
-description: Stuart McPherson, Gemma Flynn, and Siobhain Ma discuss popular Netflix series You, and popular BBC1 television programme The Apprentice.
+description: Stuart McPherson, Gemma Flynn, and Siobhain Ma discuss popular BBC1 television programme The Apprentice.
 long-description: 
 category: Comedy
 explicit: "Yes"
