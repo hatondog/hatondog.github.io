@@ -9,7 +9,7 @@ twitter:
 soundcloud: 
 soundcloud-playlist: 
 itunes: 
-description: 
+description: The GarFiles is a limited run podcast where Philip Rodger (Garfield expert) & John McInnes (Garfield novice) review 1 year of Garfield comics per episode.
 long-description: 
 category: Comedy
 explicit: "Yes"
