@@ -98,4 +98,10 @@ defaults:
     values:
       podcast: "whose-wine-is-it-anyway"
       image: "logo-whose-wine-is-it-anyway.png"
+  -
+    scope:
+      path: "_episodes/the-garfiles"
+    values:
+      podcast: "the-garfiles"
+      image: "logo-garfiles.png"
 
