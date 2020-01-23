@@ -4,8 +4,8 @@ id: the-garfiles.md
 image: logo-garfiles.png
 image-itunes: logo-garfiles-itunes.png
 order: 5
-facebook: 
-twitter: 
+facebook: TheGarfiles
+twitter: TheGarfiles
 soundcloud: the-garfiles
 soundcloud-playlist: 972308416
 itunes: 
